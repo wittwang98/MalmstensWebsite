@@ -1,0 +1,227 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: gainsboro;
+    font-family: serif;
+    cursor: default;
+    margin: 0;
+}
+
+h2
+{
+    font-size: 32pt;
+}
+
+#pageTitle
+{
+    position: absolute;
+    z-index: 2;
+    margin: auto;
+    font-size: 220pt;
+    color: yellow;
+    text-align: center;
+    width: 100%;
+    margin-top: 10vh;
+}
+
+#splashpage > img
+{
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.border
+{
+    padding: 10pt;
+}
+
+.elementHeader
+{
+    margin:0;
+    grid-area: elementHeader;
+    font-size: 128pt;
+}
+.elementName
+{
+    grid-area: elementName;
+}
+.elementImage
+{
+    margin: 0;
+    grid-area: elementImage;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.element
+{
+    box-sizing: border-box;
+    height: 100%;
+    padding: 15pt;
+    display: grid;
+    background-color: #efefef;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: min-content min-content;
+    grid-template-areas:
+        "elementHeader elementHeader elementImage"
+        "elementName elementName elementImage";
+    text-decoration: none;
+    color: black;
+}
+
+.element:visited
+{
+    color: black
+}
+
+.element.indexButton:hover
+{
+    background-color: rgb(252, 208, 200);
+}
+
+#indexing
+{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr;
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 100%;
+    height: 100vh;
+    background-color: gainsboro;
+}
+
+#first{
+    grid-area: first;
+}
+#second{
+    grid-area: second;
+}
+#third{
+    grid-area: third;
+}
+#fourth{
+    grid-area: fourth;
+}
+#fifth{
+    grid-area: fifth;
+}
+#sixth{
+    grid-area: sixth;
+}
+#seventh{
+    grid-area: seventh;
+}
+#eighth{
+    grid-area: eighth;
+}
+#nineth{
+    grid-area: nineth;
+}
+#tenth{
+    grid-area: tenth;
+}
+#eleventh{
+    grid-area: eleventh;
+}
+#twelfth{
+    grid-area: twelfth;
+}
+#thirteenth{
+    grid-area: thirteenth;
+}
+#fourteenth{
+    grid-area: fourteenth;
+}
+#fifteenth{
+    grid-area: fifteenth;
+}
+#sixteenth{
+    grid-area: sixteenth;
+}
+
+#indexElements
+{
+    height: 100%;
+    row-gap: 5pt;
+    column-gap: 5pt;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "first second third fourth"
+        "fifth sixth seventh eighth"
+        "nineth tenth eleventh twelfth"
+        "thirteenth fourteenth fifteenth sixteenth";
+}
+
+
+.projectAuthor
+{
+    grid-area: projectAuthor;
+
+}
+.projectPicture
+{
+    grid-area: projectPicture;
+    height: 100%;
+}
+.projectDescription
+{
+    grid-area: projectDescription;
+    font-size: 18pt;
+}
+.projectIndex
+{
+    font-size: 300pt;
+    margin: 0;
+    grid-area: projectIndex;
+}
+.projectDetails
+{
+    grid-area: projectDetails;
+    align-self: end;
+    font-weight: bold;
+}
+
+.indexButton
+{
+    grid-area: indexButton;
+    font-size: 36pt;
+    text-decoration: none;
+    color: gray;
+    justify-self: start;
+}
+.indexButton:hover
+{
+    cursor: pointer;
+    color: black;
+    transition: color 50ms ease-in;
+    grid-area: indexButton;
+    font-size: 36pt;
+    justify-self: start;
+}
+
+.projectPage
+{
+    border-bottom: rgba(0, 0, 0, 0.1) solid 1pt;
+    box-sizing: border-box;
+    column-gap: 3%;
+    row-gap: 1%;
+    height: 100vh;
+    display: grid;
+    width: 100%;
+    grid-template-rows: min-content repeat(4, 1fr) min-content;
+    grid-template-columns: 10% min-content 1fr min-content 10%;
+    grid-template-areas:
+        ". projectAuthor projectAuthor projectIndex ."
+        ". projectPicture projectDescription projectIndex ."
+        ". projectPicture projectDescription projectDetails ."
+        ". projectPicture projectDescription projectDetails ."
+        ". projectPicture projectDescription projectDetails ."
+        ". indexButton . . .";
+}
