@@ -7,7 +7,7 @@ Mörkgrå färg hexvärde (till siffrorna och brödtext)
 Bakgrund ljusgrå 
 #e8e8e8 */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap');
   
 html{
     scroll-behavior: smooth;
@@ -21,18 +21,22 @@ body{
 
 h1
 {
-    font-size: 48pt;
-    margin: 10pt 0pt;
+    font-size: 4vw;
+    margin: 10pt 0pt 0pt 10pt;
 }
 h2
 {
-    font-size: 32pt;
-    margin: 10pt 0pt;
+    font-size: 2vw;
+    margin: 10pt 0pt 0pt 10pt;
 }
 h3
 {
-    font-size: 24pt;
-    margin: 10pt 0;
+    font-size: 1.4vw;
+    margin: 10pt 0pt 0pt 10pt;
+}
+p
+{
+    font-size: 1.2vw;
 }
 
 h1, h3, p, h2{
@@ -41,62 +45,156 @@ h1, h3, p, h2{
     font-style: normal;
 }
 
-#pageTitle
-{
-    position: absolute;
-    z-index: 2;
-    width: 520;
-    margin-top: 10vh;
-}
-
-#backgroundImage
-{
-    object-fit: cover;
-    width: 100%;
-    height: 100vh;
-}
-
 #titleBox
 {
-    /* to be changed */
-    width: 100%;
-}
-
-#yellowBox
-{
-    border-radius: 20pt;
-    background-color: #ffff00;
-    margin: 10pt;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 10vh;
-}
-
-#stickyWrapper
-{
-    /* margin-top: 100vh; */
-    /* position: absolute;
-    z-index: 2; */
-    height: auto;
-    width: 60%;
+    grid-area: titleBox;
+    width: 98%;
+    margin-top: 10vh;
     margin-left: auto;
     margin-right: auto;
 }
 
+#yellowBox
+{
+    grid-area: yellowBox;
+    border-radius: 20pt;
+    background-color: #ffff00;
+    max-width: 33%;
+    margin-left: auto;
+    margin-right: 2%;
+    margin-bottom: 5vh;
+    height: fit-content;
+    padding: 20pt;
+}
+
+.fadeIn
+{
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation 
+{
+    0% {
+        opacity: 0;
+    }
+    30%
+    {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+@-moz-keyframes fadeInAnimation 
+{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+@-webkit-keyframes fadeInAnimation 
+{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+#firstColumn
+{
+    grid-area: firstColumn;
+}
+
+#secondColumn
+{
+    grid-area: secondColumn;
+}
+
+#yellowBoxFull
+{
+    grid-area: yellowBoxFull;
+    border-radius: 20pt;
+    background-color: #ffff00;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10vh;
+    height: fit-content;
+    padding: 20pt;
+    display: grid;
+    column-gap: 15pt;
+    grid-row: 1fr;
+    grid-column: 1fr 1fr;
+    grid-template-areas:
+        "firstColumn secondColumn";
+}
+
+#splashpage
+{
+    display: grid;
+    grid-column: 1% 1fr 1%;
+    grid-row: 1fr min-content;
+    grid-template-areas:
+        ". titleBox ."
+        ". yellowBox .";
+    background-color: #e8e8e8;
+    min-height: 100vh;
+    height: fit-content;
+    background-image: url("gruppbild-placeholder_3x2.jpg");
+    background-size: cover;
+    background-position-x: center;
+}
+
+#splashpageReadMore
+{
+    row-gap: 10vh;
+    display: grid;
+    grid-column: 1% 1fr 1%;
+    grid-row: 1fr min-content;
+    grid-template-areas:
+        ". titleBox ."
+        ". yellowBoxFull .";
+    background-color: #e8e8e8;
+    height: fit-content;
+    background-image: url("gruppbild-placeholder_3x2.jpg");
+    background-size: cover;
+    background-position-x: center;
+}
+
+#splashpageProjects
+{
+    display: grid;
+    grid-column: 1fr;
+    grid-template-areas:
+        "titleBox";
+    background-color: #e8e8e8;
+    height: 100vh;
+    background-image: url("gruppbild-placeholder_3x2.jpg");
+    background-size: cover;
+    background-position-x: center;
+}
+
 .border
 {
-    padding: 10pt;
+    padding: 0 1%;
 }
 
 .elementHeader
 {
     margin:0;
     grid-area: elementHeader;
-    font-size: 128pt;
 }
 .elementName
 {
     grid-area: elementName;
+    margin-top: 2pt;
 }
 .elementImage
 {
@@ -109,18 +207,21 @@ h1, h3, p, h2{
 
 .elementCreator
 {
+    
     grid-area: elementCreator;
 }
 
 .element
 {
+    -webkit-box-shadow: -4px 2px 15px 5px rgba(116, 116, 116, 0.32); 
+    box-shadow: -4px 2px 15px 5px rgba(116, 116, 116, 0.32);
     box-sizing: border-box;
     height: 100%;
-    padding: 15pt;
+    padding: 10pt;
     display: grid;
     background-color: #e8e8e8;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: min-content 1fr 1fr;
+    grid-template-rows: min-content min-content min-content;
     grid-template-areas:
         "elementHeader elementHeader elementImage elementImage"
         "elementCreator elementCreator elementImage elementImage"
@@ -131,7 +232,7 @@ h1, h3, p, h2{
 
 .element:visited
 {
-    color: black
+    color: #636363;
 }
 
 .element.indexButton:hover
@@ -147,12 +248,12 @@ h1, h3, p, h2{
     box-sizing: border-box;
     max-width: 100%;
     width: 100%;
-    background-color: #dddcdc;
+    background-color: #e8e8e8;
 }
 
 #indexNav
 {
-    margin: 10pt 0;
+   margin: 20pt ;
 }
 
 #first{
@@ -219,7 +320,6 @@ h1, h3, p, h2{
         "thirteenth fourteenth fifteenth sixteenth";
 }
 
-
 .projectTitle
 {
     font-style: italic;
@@ -227,25 +327,43 @@ h1, h3, p, h2{
 
 .projectHeader
 {
+    margin-left: 20pt;
     grid-area: projectHeader;
+    margin-top: 0;
+
 }
 
 .projectAuthor
 {
+    margin-left: 20pt;
     grid-area: projectAuthor;
 
 }
 .projectPicture
 {
+    position: relative;
+    margin-left: 20pt;
     grid-area: projectPicture;
     width: 100%;
-    max-height: 100%;
+    object-fit: cover;
 }
+
+.projectPicture > img
+{
+    width: 100%;
+    object-fit: cover;
+}
+
+.projectPicture > a
+{
+    font-size: 24pt;
+}
+
 .projectDescription
 {
     grid-area: projectDescription;
-    font-size: 18pt;
     margin-top: 0;
+    font-size: 1.5vw;
 }
 
 .extraElement
@@ -261,7 +379,18 @@ h1, h3, p, h2{
 {
     grid-area: projectDetails;
     align-self: end;
-    font-weight: bold;
+    color: #636363;
+    text-decoration: none;
+}
+
+.projectDetails > a
+{
+    color: #636363;
+}
+
+.projectDetails > a:visited
+{
+    color: #636363;
 }
 
 .indexButton
@@ -269,8 +398,15 @@ h1, h3, p, h2{
     grid-area: indexButton;
     font-size: 36pt;
     text-decoration: none;
-    color: gray;
+    color: #636363;
     justify-self: start;
+    margin-left: 20pt;
+    margin-top: 20pt;
+}
+
+.indexButton > p
+{
+    font-size: 1.5vw;
 }
 .indexButton:hover
 {
@@ -282,32 +418,223 @@ h1, h3, p, h2{
     justify-self: start;
 }
 
+.readMorePageButton
+{
+    text-decoration: none;
+    color: #636363;
+}
+.readMorePageButton:hover
+{
+    cursor: pointer;
+    color: black;
+    transition: color 50ms ease-in;
+}
+
+.startPageButton
+{
+    text-decoration: none;
+    color: #636363;
+}
+.startPageButton:hover
+{
+    cursor: pointer;
+    color: black;
+    transition: color 50ms ease-in;
+}
+
 .projectPage
 {
+    margin: 5vh 0;
     box-sizing: border-box;
     column-gap: 3%;
     row-gap: 1%;
     display: grid;
     grid-template-rows: min-content min-content repeat(3, 1fr) min-content;
-    grid-template-columns: 10% 1fr 1fr 1fr 1fr 10%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas:
-        ". projectAuthor    projectAuthor      . projectIndex         ."
-        ". projectHeader    projectHeader       . projectIndex         ."
-        ". projectPicture   projectPicture      projectDescription   projectDescription ."
-        ". projectPicture   projectPicture      projectDescription  projectDescription ."
-        ". projectPicture   projectPicture      projectDescription  projectDescription ."
-        ". indexButton      indexButton         .  projectDetails .";
+        " projectAuthor    projectAuthor      . projectIndex         "
+        " projectHeader    projectHeader       . projectIndex         "
+        " projectPicture   projectPicture      projectDescription   . "
+        " projectPicture   projectPicture      projectDescription   ."
+        " projectPicture   projectPicture      projectDescription  projectDetails "
+        " indexButton      indexButton         .  projectDetails ";
 }
+
+.slide
+{
+    display: none;
+}
+
+.prev, .next
+{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next
+{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover
+{
+    background-color: rgba(0,0,0,0.8);
+}
+
+.fade
+{
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+  
+@-webkit-keyframes fade
+{
+    from {opacity: .4}
+    to {opacity: 1}
+}
+  
+@keyframes fade
+{
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
 
 #thanks
 {
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 20pt;
+    margin-bottom: 10vh;
 }
 
-@media only screen and (max-width: 1400px){
- 
+#thanksHeadline
+{
+    grid-area: thanksHeadline;
+}
+
+#firstColumnThanks
+{
+    grid-area: firstColumnThanks;
+}
+
+#secondColumnThanks
+{
+    grid-area: secondColumnThanks;
+}
+
+#thanks > .border
+{
+    display: grid;
+    grid-row: min-content 1fr;
+    grid-column: 1fr 1fr;
+    column-gap: 20pt;
+    grid-template-areas:
+        "thanksHeadline thanksHeadline"
+        "firstColumnThanks secondColumnThanks";
+}
+
+#thanks > .border > div > p
+{
+    margin-left: 20pt;
+}
+
+#thanks > .border > div > p > a
+{
+    color: #636363;
+}
+
+#thanks > .border > div > p > a:visited
+{
+    color: #636363;
+}
+
+#thanks > .border > div > p > a:hover
+{
+    color: black;
+}
+
+@media only screen and (max-width: 1366px){
+
+h1
+{
+    font-size: 42pt;
+    margin: 10pt 0pt 0pt 10pt;
+}
+h2
+{
+    font-size: 28pt;
+    margin: 10pt 0pt 0pt 10pt;
+}
+h3
+{
+    font-size: 20pt;
+    margin: 10pt 0pt 0pt 10pt;
+}
+p
+{
+    font-size: 14pt;
+}
+
+.indexButton > p
+{
+    font-size: 24pt;
+}
+.indexButton{
+    margin-left: 0pt;
+}
+
+#yellowBox
+{
+    grid-area: yellowBox;
+    border-radius: 20pt;
+    background-color: #ffff00;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5vh;
+    height: fit-content;
+    padding: 20pt;
+}
+
+
+.elementCreator, .elementName
+{
+    margin-bottom: 10pt;
+    font-size: 36pt;
+}
+
+.element
+{
+    -webkit-box-shadow: -4px 2px 15px 5px rgba(116, 116, 116, 0.32); 
+    box-shadow: -4px 2px 15px 5px rgba(116, 116, 116, 0.32);
+    box-sizing: border-box;
+    height: 100%;
+    padding: 10pt;
+    display: grid;
+    background-color: #e8e8e8;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content repeat(3, min-content);
+    grid-template-areas:
+        "elementHeader"
+        "elementCreator"
+        "elementName"
+        "elementImage"
+        "elementImage";
+    text-decoration: none;
+    color: black;
+    }
     
 #indexElements
 {
@@ -327,7 +654,36 @@ h1, h3, p, h2{
         "thirteenth fourteenth"
         "fifteenth sixteenth";
 }
-    
+  
+
+.projectHeader
+{
+    margin-left: 0pt;
+    grid-area: projectHeader;
+
+}
+
+.projectAuthor
+{
+    margin-left: 0pt;
+    grid-area: projectAuthor;
+
+}
+.projectPicture
+{
+    margin-left: 0pt;
+    grid-area: projectPicture;
+    width: 100%;
+    object-fit: cover;
+}
+
+.projectDescription
+{
+    grid-area: projectDescription;
+    margin-top: 0;
+    font-size: 14pt;
+}
+
 .projectPage
 {
     box-sizing: border-box;
@@ -335,19 +691,103 @@ h1, h3, p, h2{
     row-gap: 1%;
     display: grid;
     width: 100%;
-    grid-template-rows: min-content min-content min-content repeat(3, 1fr) repeat(4, min-content);
+    grid-template-rows: repeat(10, min-content);
     grid-template-columns: 10% 1fr 10%;
     grid-template-areas:
         ". projectIndex  ."
         ". projectAuthor  ."
-        ". projectHeader   ."
+        ". projectHeader  ."
+        ". projectPicture  ."
         ". projectPicture   ."
-        ". projectPicture    ."
-        ". projectPicture    ."
-        ". projectDescription  ."
-        ". projectDescription  ."
-        ". projectDetails  ."
-        ". indexButton    .";
+        ". projectPicture   ."
+        ". projectDescription ."
+        ". projectDescription ."
+        ". projectDetails ."
+        ". indexButton   .";
+}
+
+#yellowBoxFull
+{
+    grid-area: yellowBoxFull;
+    width: 90%;
+    display: grid;
+    column-gap: 15pt;
+    grid-row: 1fr 1fr;
+    grid-column: 1fr;
+    grid-template-areas:
+        "firstColumn"
+        "secondColumn";
+}
+
+}
+
+@media only screen and (max-width: 610px){
+
+    .elementCreator, .elementName
+    {
+        margin-left: 20pt;
+        margin-bottom: 10pt;
+        font-size: 36pt;
+    }
+    .elementImage
+    {
+        display: none;
+    }
+
+    #indexNav
+    {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #indexElements
+    {
+        height: 100%;
+        row-gap: 5pt;
+        column-gap: 5pt;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(16, min-content);
+        grid-template-areas:
+            "first"
+            "second"
+            "third"
+            "fourth"
+            "fifth"
+            "sixth"
+            "seventh"
+            "eighth"
+            "nineth"
+            "tenth"
+            "eleventh"
+            "twelfth"
+            "thirteenth"
+            "fourteenth"
+            "fifteenth"
+            "sixteenth";
+    }
+    #yellowBoxFull
+    {
+        grid-area: yellowBoxFull;
+        width: 80%;
+        display: grid;
+        column-gap: 15pt;
+        grid-row: 1fr 1fr;
+        grid-column: 1fr;
+        grid-template-areas:
+            "firstColumn"
+            "secondColumn";
+    }
+
+    #thanks > .border
+{
+    display: grid;
+    grid-row: min-content min-content min-content;
+    grid-column: 1fr;
+    grid-template-areas:
+        "thanksHeadline"
+        "firstColumnThanks" 
+        "secondColumnThanks";
 }
 
 }
