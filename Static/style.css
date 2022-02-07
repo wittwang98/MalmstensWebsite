@@ -733,11 +733,51 @@ p
 
 @media only screen and (max-width: 610px){
 
+    h1
+    {
+        font-size: 32pt;
+        margin: 10pt 0pt 0pt 10pt;
+    }
+    h2
+    {
+        font-size: 24pt;
+        margin: 10pt 0pt 0pt 10pt;
+    }
+    h3
+    {
+        font-size: 18pt;
+        margin: 10pt 0pt 0pt 10pt;
+    }
+    p
+    {
+        font-size: 12pt;
+    }
+    
+    .indexButton > p
+    {
+        font-size: 14pt;
+    }
+    .indexButton{
+        margin-left: 0pt;
+    }
+
+    .projectDescription
+    {
+        grid-area: projectDescription;
+        margin-top: 0;
+        font-size: 12pt;
+    }
+
+.projectDetails
+    {
+        font-size: 12pt;
+    }
+
     .elementCreator, .elementName, .elementImage
     {
         margin-left: 20pt;
         margin-bottom: 10pt;
-        font-size: 36pt;
+        font-size: 32pt;
     }
 
     #indexNav
