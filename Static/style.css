@@ -188,6 +188,7 @@ h1, h3, p, h2{
 
 .elementHeader
 {
+    max-width: 100%;
     margin:0;
     grid-area: elementHeader;
 }
@@ -348,7 +349,7 @@ h1, h3, p, h2{
 
 .projectPicture > img
 {
-    width: 100%;
+    width: 90%;
     object-fit: cover;
 }
 
@@ -371,6 +372,7 @@ h1, h3, p, h2{
 
 .projectIndex
 {
+    max-width: 100%;
     margin-top: 5vh;
     grid-area: projectIndex;
 }
