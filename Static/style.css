@@ -280,8 +280,8 @@ h1, h3, p, h2{
 #eighth{
     grid-area: eighth;
 }
-#nineth{
-    grid-area: nineth;
+#ninth{
+    grid-area: ninth;
 }
 #tenth{
     grid-area: tenth;
@@ -316,7 +316,7 @@ h1, h3, p, h2{
     grid-template-areas:
         "first second third fourth"
         "fifth sixth seventh eighth"
-        "nineth tenth eleventh twelfth"
+        "ninth tenth eleventh twelfth"
         "thirteenth fourteenth fifteenth sixteenth";
 }
 
@@ -651,7 +651,7 @@ p
         "third fourth"
         "fifth sixth"
         "seventh eighth"
-        "nineth tenth"
+        "ninth tenth"
         "eleventh twelfth"
         "thirteenth fourteenth"
         "fifteenth sixteenth";
@@ -735,17 +735,17 @@ p
 
     h1
     {
-        font-size: 32pt;
+        font-size: 24pt;
         margin: 10pt 0pt 0pt 10pt;
     }
     h2
     {
-        font-size: 24pt;
+        font-size: 18pt;
         margin: 10pt 0pt 0pt 10pt;
     }
     h3
     {
-        font-size: 18pt;
+        font-size: 16pt;
         margin: 10pt 0pt 0pt 10pt;
     }
     p
@@ -797,25 +797,17 @@ p
         row-gap: 5pt;
         column-gap: 5pt;
         display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(16, min-content);
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(8, min-content);
         grid-template-areas:
-            "first"
-            "second"
-            "third"
-            "fourth"
-            "fifth"
-            "sixth"
-            "seventh"
-            "eighth"
-            "nineth"
-            "tenth"
-            "eleventh"
-            "twelfth"
-            "thirteenth"
-            "fourteenth"
-            "fifteenth"
-            "sixteenth";
+        "first second"
+        "third fourth"
+        "fifth sixth"
+        "seventh eighth"
+        "ninth tenth"
+        "eleventh twelfth"
+        "thirteenth fourteenth"
+        "fifteenth sixteenth";
     }
     #yellowBoxFull
     {

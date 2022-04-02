@@ -179,8 +179,8 @@ h1, h3, p, h2{
 #eighth{
     grid-area: eighth;
 }
-#nineth{
-    grid-area: nineth;
+#ninth{
+    grid-area: ninth;
 }
 #tenth{
     grid-area: tenth;
@@ -215,7 +215,7 @@ h1, h3, p, h2{
     grid-template-areas:
         "first second third fourth"
         "fifth sixth seventh eighth"
-        "nineth tenth eleventh twelfth"
+        "ninth tenth eleventh twelfth"
         "thirteenth fourteenth fifteenth sixteenth";
 }
 
@@ -322,7 +322,7 @@ h1, h3, p, h2{
         "third fourth"
         "fifth sixth"
         "seventh eighth"
-        "nineth tenth"
+        "ninth tenth"
         "eleventh twelfth"
         "thirteenth fourteenth"
         "fifteenth sixteenth";
