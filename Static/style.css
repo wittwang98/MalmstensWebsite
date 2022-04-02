@@ -775,9 +775,9 @@ p
 
     .elementCreator, .elementName, .elementImage
     {
-        margin-left: 20pt;
+        margin-left: 0;
         margin-bottom: 10pt;
-        font-size: 32pt;
+        font-size: 18pt;
     }
 
     #indexNav
