@@ -755,10 +755,11 @@ p
     
     .indexButton > p
     {
-        font-size: 14pt;
+        font-size: 18pt;
     }
     .indexButton{
         margin-left: 0pt;
+        padding-bottom: 50pt;
     }
 
     .projectDescription
@@ -775,7 +776,7 @@ p
 
     .elementCreator, .elementName, .elementImage
     {
-        margin-left: 0;
+        margin-left: 0pt;
         margin-bottom: 10pt;
         font-size: 18pt;
     }
@@ -788,7 +789,7 @@ p
 
     .elementImage
     {
-        width: 90%;
+        width: 100%;
     }
 
     #indexElements
